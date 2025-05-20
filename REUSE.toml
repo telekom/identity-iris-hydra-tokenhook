@@ -1,12 +1,7 @@
-# SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
-#
-# SPDX-License-Identifier: CC0-1.0    
-
-# See https://reuse.software/spec-3.2/#reusetoml for specification
 version = 1
 
 [[annotations]]
-path = ["*"]
+path = ["**/go.mod", "**/go.sum"]
 precedence = "aggregate"
-SPDX-FileCopyrightText = "Apache-2.0"
-SPDX-License-Identifier = "2025 Deutsche Telekom AG"
+SPDX-FileCopyrightText = "Copyright 2025 Deutsche Telekom IT GmbH"
+SPDX-License-Identifier = "Apache-2.0"

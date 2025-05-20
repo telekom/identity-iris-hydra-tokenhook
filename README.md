@@ -1,8 +1,9 @@
-<!---
-# SPDX-FileCopyrightText: 2025 Deutsche Telekom AG
-#
-# SPDX-License-Identifier: Apache-2.0
+<!--
+SPDX-FileCopyrightText: 2025 Deutsche Telekom AG
+
+SPDX-License-Identifier: Apache-2.0  
 -->
+
 # Token Hook
 
 The `token-hook` is an Ory Hydra "webhook", allowing you to modify access tokens.
