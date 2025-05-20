@@ -1,24 +1,38 @@
-<!--
-SPDX-FileCopyrightText: 2023 Deutsche Telekom AG
+# Token Hook
 
-SPDX-License-Identifier: CC0-1.0    
--->
+The `token-hook` is an Ory Hydra "webhook", allowing you to modify access tokens.
 
-# my-sample-project
+## Features
 
-## About
+- Add custom claims (`azp`, `originStargate`, `originZone`) to access tokens.
+- Enable or disable debug mode for detailed logging.
 
-This project is ...
-<!-- TODO -->
+## Environmental Variables
 
-## Code of Conduct
+The following environment variables can be used to configure the `token-hook` service:
 
-This project has adopted the [Contributor Covenant](https://www.contributor-covenant.org/) in version 2.1 as our code of conduct. Please see the details in our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). All contributors must abide by the code of conduct.
+| Variable                    | Description                                                                  | Default Value |
+|-----------------------------|------------------------------------------------------------------------------|---------------|
+| `TOKEN_HOOK_PORT`           | The port on which the token hook server will listen.                         | `4445`        |
+| `CLAIM_SET_ORIGIN_STARGATE` | Value used for the `originStargate` claim.                                   | Not set       |      
+| `CLAIM_SET_ORIGIN_ZONE`     | Value used for the `originZone` claim.                                       | Not set       |
+| `CLAIM_ADD_AZP`             | If set to `true`, adds the `azp` claim to the token.                         | `true`        |
+| `DEBUG`                     | If set to `true`, enables debug logging (may include sensitive information). | `false`       |
 
-By participating in this project, you agree to abide by its [Code of Conduct](./CODE_OF_CONDUCT.md) at all times.
+## Usage
 
-## Licensing
+### Running Locally
 
-This project follows the [REUSE standard for software licensing](https://reuse.software/).    
-Each file contains copyright and license information, and license texts can be found in the [./LICENSES](./LICENSES) folder. For more information visit https://reuse.software/.    
-You can find a guide for developers at https://telekom.github.io/reuse-template/.   
+1. **Build the Docker Image**  
+   Use the provided `Dockerfile` to build the `token-hook` image with the name `token-hook:latest`:
+   ```bash
+   docker build -t token-hook:latest .
+
+2. Use the provided [quickstart-iris-hydra](quickstart-token-hook.yml) docker-compose file along with the Iris-Hydra
+   quickstart files .
+
+```shell
+docker compose -f quickstart.yml -f quickstart-iris-hydra.yml -f quickstart-tokenhook.yml up -d
+```
+
+To test the token hook, you can use the example provided by iris-hydra and decode the JWT token string.
