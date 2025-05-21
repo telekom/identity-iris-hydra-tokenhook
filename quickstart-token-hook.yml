@@ -7,6 +7,8 @@ services:
       - STRATEGIES_ACCESS_TOKEN=jwt # Enable JWT tokens by default
       - OAUTH2_TOKEN_HOOK_URL=http://token-hook:4475
       - LOG_LEAK_SENSITIVE_VALUES=true # Debugging output
+      - OAUTH2_ALLOWED_TOP_LEVEL_CLAIMS=["originStargate","originZone","azp"]
+      - OAUTH2_MIRROR_TOP_LEVEL_CLAIMS=false
   token-hook:
     image: token-hook:latest
     container_name: token-hook

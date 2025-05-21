@@ -27,8 +27,6 @@ The following environment variables can be used to configure the `token-hook` se
 
 ## Usage
 
-## Usage
-
 ### Running Locally
 
 1. **Build the Docker Image**
