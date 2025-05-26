@@ -19,7 +19,7 @@ The following environment variables can be used to configure the `token-hook` se
 
 | Variable                    | Description                                                       | Default Value |
 |-----------------------------|-------------------------------------------------------------------|---------------|
-| `TOKEN_HOOK_PORT`           | The port on which the token hook server will listen.              | `4445`        |
+| `TOKEN_HOOK_PORT`           | The port on which the token hook server will listen.              | `4475`        |
 | `CLAIM_SET_ORIGIN_STARGATE` | Value used for the `originStargate` claim.                        | Not set       |
 | `CLAIM_SET_ORIGIN_ZONE`     | Value used for the `originZone` claim.                            | Not set       |
 | `CLAIM_ADD_AZP`             | If set to `true`, adds the `azp` claim to the token.              | `true`        |
