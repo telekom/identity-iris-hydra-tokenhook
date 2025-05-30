@@ -44,3 +44,9 @@ docker compose -f quickstart.yml -f quickstart-iris-hydra.yml -f quickstart-toke
 To test the token hook, you can use the iris-hydra provided
 [example](https://github.com/telekom/identity-iris-hydra?tab=readme-ov-file#running-tests) and verify
 the additional claims are present in the token.
+
+## Conventional Commits
+
+This project enforces [Conventional Commits](https://www.conventionalcommits.org/) for all commits.
+**All commit messages must follow the Conventional Commits specification.**
+This is automatically checked in CI for both pushes and pull requests.
