@@ -7,6 +7,7 @@
 
 ARG GO_IMAGE=golang:1.22
 ARG DISTROLESS_IMAGE=gcr.io/distroless/static-debian12:debug-nonroot
+ARG GOPROXY=proxy.golang.org
 
 FROM ${GO_IMAGE} AS builder
 
@@ -14,6 +15,7 @@ WORKDIR /go/src/token-hook
 
 COPY . .
 ENV CGO_ENABLED=0
+ARG GOPROXY
 RUN go build -o token-hook
 RUN go test -v .
 #########################
